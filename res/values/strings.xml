@@ -2,4 +2,8 @@
 <resources>
 	<string name="app_name">Caffeine</string>
 	<string name="add_item">Add Item</string>
+	<string name="edit_item">Item Editor</string>
+	
+	<string name="item_title">Drink Name</string>
+	<string name="item_body">Ingredients</string>
 </resources>
