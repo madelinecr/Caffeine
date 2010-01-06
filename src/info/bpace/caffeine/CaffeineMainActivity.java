@@ -3,6 +3,8 @@ package info.bpace.caffeine;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 public class CaffeineMainActivity extends ListActivity
 {
@@ -17,5 +19,13 @@ public class CaffeineMainActivity extends ListActivity
 		itemArray.add("Placeholder");
 		setListAdapter(itemArray);
 		getListView().setTextFilterEnabled(true);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.list_menu, menu);
+		return true;
 	}
 }
