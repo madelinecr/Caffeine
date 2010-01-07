@@ -65,6 +65,7 @@ public class CaffeineMainActivity extends ListActivity
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
+		super.onCreateOptionsMenu(menu);
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.list_options, menu);
 		return true;
@@ -76,6 +77,7 @@ public class CaffeineMainActivity extends ListActivity
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
+		super.onOptionsItemSelected(item);
 		switch(item.getItemId())
 		{
 			case R.id.add_item:
