@@ -7,18 +7,25 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class DBAdapter
 {
+	// static block
 	private static final String DATABASE_NAME = "caffeine_db";
 	private static final String DATABASE_TABLE = "drinks";
 	private static final int DATABASE_VERSION = 1;
 	
 	public static final String KEY_TITLE = "title";
+	public static final String KEY_INGREDIENTS = "ingredients";
 	public static final String KEY_BODY = "body";
 	public static final String KEY_ROWID = "_id";
 	private static final String TAG = "CaffeineDBAdapter";
 
 	private static final String DATABASE_CREATE =
  		"create table notes (_id integer primary key autoincrement, "
-		+ "title text not null, body text not null);";
+		+ "title text not null, ingredients text not null, body text not null);";
+	
+	private final Context mContext;
+	private DBHelper mDBHelper;
+	private SQLiteDatabase mDB;
+	
 	
 	/**
 	 * Private helper class to perform basic database management
@@ -45,5 +52,4 @@ public class DBAdapter
 			onCreate(db);
 		}
 	}
-	
 }
