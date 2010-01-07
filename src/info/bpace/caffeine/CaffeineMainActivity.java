@@ -66,8 +66,7 @@ public class CaffeineMainActivity extends ListActivity
 		switch(item.getItemId())
 		{
 			case R.id.add_item:
-				Intent i = new Intent(this, EditItemActivity.class);
-				startActivity(i);
+				addItem();
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
@@ -114,10 +113,7 @@ public class CaffeineMainActivity extends ListActivity
 	protected void onListItemClick(ListView l, View v, int position, long id)
 	{
 		super.onListItemClick(l, v, position, id);
-		Intent i = new Intent(this, ViewItemActivity.class);
-		
-		i.putExtra(DBAdapter.KEY_ROWID, id);
-		startActivityForResult(i, ACTIVITY_VIEW);
+		viewItem(id);
 	}
 	
 	/**
@@ -150,5 +146,40 @@ public class CaffeineMainActivity extends ListActivity
 		
 		setListAdapter(adapter);
 		getListView().setTextFilterEnabled(true);
+	}
+	
+	/**
+	 * Fires off an explicit intent to view an entry
+	 */
+	private void viewItem(long id)
+	{
+		Intent i = new Intent(this, ViewItemActivity.class);
+		i.putExtra(DBAdapter.KEY_ROWID, id);
+		startActivity(i);
+	}
+	
+	/**
+	 * Fires off an explicit intent to add an entry
+	 */
+	private void addItem()
+	{
+		Intent i = new Intent(this, EditItemActivity.class);
+		startActivityForResult(i, ACTIVITY_CREATE);
+	}
+	
+	/**
+	 * Fires off an explicit intent to edit an entry
+	 */
+	private void editItem()
+	{
+		
+	}
+	
+	/**
+	 * Fires off an explicit intent to delete an entry
+	 */
+	private void deleteItem()
+	{
+		
 	}
 }
