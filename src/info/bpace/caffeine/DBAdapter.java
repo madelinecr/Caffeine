@@ -20,6 +20,8 @@ public class DBAdapter
 	public static final String KEY_TITLE = "title";
 	public static final String KEY_INGREDIENTS = "ingredients";
 	public static final String KEY_BODY = "body";
+	public static final String[] COLUMNS = { KEY_ROWID, KEY_TITLE, KEY_INGREDIENTS, KEY_BODY };
+	
 	private static final String TAG = "CaffeineDBAdapter";
 
 	private static final String DATABASE_CREATE =
@@ -62,6 +64,20 @@ public class DBAdapter
 		return mDB.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TITLE,
 			KEY_INGREDIENTS, KEY_BODY}, null, null, null, null, null);
 	}
+	
+	public Cursor readEntry(long rowId) throws SQLException
+	{
+		
+		Cursor mCursor = mDB.query(true, DATABASE_TABLE, COLUMNS, KEY_ROWID + "=" + rowId, 
+			null, null, null, null, null);
+		
+		if(mCursor != null)
+		{
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+	}
+	
 	/**
 	 * Private helper class to perform basic database management
 	 */
