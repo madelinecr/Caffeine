@@ -19,6 +19,19 @@
 	<TextView
 	 android:layout_width="wrap_content"
 	 android:layout_height="wrap_content"
+	 android:text="@string/item_ingredients" />
+	
+	<EditText
+	 android:id="@+id/item_ingredients"
+	 android:layout_width="fill_parent"
+	 android:layout_height="wrap_content"
+	 android:textSize="18sp"
+	 android:gravity="top"
+	 android:layout_weight="0.5" />
+	
+	<TextView
+	 android:layout_width="wrap_content"
+	 android:layout_height="wrap_content"
 	 android:text="@string/item_body" />
 	
 	<EditText
@@ -27,7 +40,7 @@
 	 android:layout_height="wrap_content"
 	 android:textSize="18sp"
 	 android:gravity="top"
-	 android:layout_weight="1" />
+	 android:layout_weight="0.5" />
 	
 	<Button
 	 android:id="@+id/submit"

@@ -5,6 +5,7 @@
 	<string name="edit_item">Item Editor</string>
 	
 	<string name="item_title">Drink Name</string>
-	<string name="item_body">Ingredients</string>
+	<string name="item_ingredients">Ingredients</string>
+	<string name="item_body">Instructions</string>
 	<string name="submit">Add Drink</string>
 </resources>
