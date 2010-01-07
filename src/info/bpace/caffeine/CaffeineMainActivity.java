@@ -2,9 +2,11 @@ package info.bpace.caffeine;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.database.Cursor;
 import android.content.Intent;
 
-import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.SimpleCursorAdapter;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,16 +14,31 @@ import android.view.MenuInflater;
 
 public class CaffeineMainActivity extends ListActivity
 {
+	DBAdapter mDBAdapter;
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.main);
+		mDBAdapter = new DBAdapter(this);
+		mDBAdapter.open();
 		
-		ArrayAdapter itemArray = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-		itemArray.add("Placeholder");
-		setListAdapter(itemArray);
+		fillData();
+	}
+	
+	private void fillData()
+	{
+		Cursor c = mDBAdapter.readAll();
+		startManagingCursor(c);
+		
+		int layout = android.R.layout.simple_list_item_1;
+		String[] from = new String[] { DBAdapter.KEY_TITLE };
+		int[] to = new int[] { android.R.id.text1 };
+		
+		ListAdapter adapter = new SimpleCursorAdapter(this, layout, c, from, to);
+		
+		setListAdapter(adapter);
 		getListView().setTextFilterEnabled(true);
 	}
 	
@@ -43,5 +60,12 @@ public class CaffeineMainActivity extends ListActivity
 				startActivity(mIntent);
 		}
 		return true;
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent intent)
+	{
+		super.onActivityResult(requestCode, resultCode, intent);
+		fillData();
 	}
 }
