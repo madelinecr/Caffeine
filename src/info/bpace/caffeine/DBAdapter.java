@@ -35,6 +35,10 @@ public class DBAdapter
 	private DBHelper mDBHelper;
 	private SQLiteDatabase mDB;
 	
+// -----------------------------------------------------------------------------
+// Public methods
+// -----------------------------------------------------------------------------
+	
 	/**
 	 * Constructor - takes the context to allow the database to be
 	 * created.
@@ -112,6 +116,10 @@ public class DBAdapter
 		return mCursor;
 	}
 	
+// -----------------------------------------------------------------------------
+// Private helper class
+// -----------------------------------------------------------------------------
+
 	/**
 	 * Private helper class to perform basic database management
 	 */

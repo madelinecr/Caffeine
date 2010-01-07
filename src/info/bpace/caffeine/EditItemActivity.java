@@ -18,7 +18,11 @@ public class EditItemActivity extends Activity implements OnClickListener
 	private EditText mIngredientsText;
 	private EditText mBodyText;
 	private DBAdapter mDBAdapter;
-	
+
+// -----------------------------------------------------------------------------
+// Public methods
+// -----------------------------------------------------------------------------
+
 	/**
 	 * Starts rendering main view, opens database connection
 	 * and sets mouse callback for submit button
@@ -50,7 +54,11 @@ public class EditItemActivity extends Activity implements OnClickListener
 		saveState();
 		finish();
 	}
-	
+
+// -----------------------------------------------------------------------------
+// Private methods
+// -----------------------------------------------------------------------------
+
 	/**
 	 * Write EditText fields out to database
 	 */

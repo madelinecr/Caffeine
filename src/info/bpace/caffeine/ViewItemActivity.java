@@ -15,7 +15,11 @@ import android.content.Intent;
 public class ViewItemActivity extends Activity
 {
 	DBAdapter mDBAdapter;
-	
+
+// -----------------------------------------------------------------------------
+// Public methods
+// -----------------------------------------------------------------------------
+
 	/**
 	 * Gets passed in an id number as an intent extra
 	 * Uses that id to load information from the database

@@ -28,6 +28,10 @@ public class CaffeineMainActivity extends ListActivity
 	
 	DBAdapter mDBAdapter;
 	
+// -----------------------------------------------------------------------------
+// Public methods
+// -----------------------------------------------------------------------------
+
 	/**
 	 * Connects to the database and fills listView
 	 */
@@ -40,24 +44,6 @@ public class CaffeineMainActivity extends ListActivity
 		
 		registerForContextMenu( getListView() );
 		fillData();
-	}
-	
-	/**
-	 * Queries for all rows in database and adds titles to listView
-	 */
-	private void fillData()
-	{
-		Cursor c = mDBAdapter.readAll();
-		startManagingCursor(c);
-		
-		int layout = android.R.layout.simple_list_item_1;
-		String[] from = new String[] { DBAdapter.KEY_TITLE };
-		int[] to = new int[] { android.R.id.text1 };
-		
-		ListAdapter adapter = new SimpleCursorAdapter(this, layout, c, from, to);
-		
-		setListAdapter(adapter);
-		getListView().setTextFilterEnabled(true);
 	}
 	
 	/**
@@ -117,6 +103,10 @@ public class CaffeineMainActivity extends ListActivity
 		}
 	}
 	
+// -----------------------------------------------------------------------------
+// Protected methods
+// -----------------------------------------------------------------------------
+
 	/**
 	 * List selection callback
 	 */
@@ -138,5 +128,27 @@ public class CaffeineMainActivity extends ListActivity
 	{
 		super.onActivityResult(requestCode, resultCode, intent);
 		fillData();
+	}
+	
+// -----------------------------------------------------------------------------
+// Private methods
+// -----------------------------------------------------------------------------
+	
+	/**
+	 * Queries for all rows in database and adds titles to listView
+	 */
+	private void fillData()
+	{
+		Cursor c = mDBAdapter.readAll();
+		startManagingCursor(c);
+		
+		int layout = android.R.layout.simple_list_item_1;
+		String[] from = new String[] { DBAdapter.KEY_TITLE };
+		int[] to = new int[] { android.R.id.text1 };
+		
+		ListAdapter adapter = new SimpleCursorAdapter(this, layout, c, from, to);
+		
+		setListAdapter(adapter);
+		getListView().setTextFilterEnabled(true);
 	}
 }
