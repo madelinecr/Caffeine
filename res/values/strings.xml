@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Caffeine</string>
-	<string name="add_item">Add Item</string>
-	<string name="edit_item">Item Editor</string>
-	<string name="view_item">View Item</string>
+	<string name="add_item">Add Drink</string>
+	<string name="edit_item">Edit Drink</string>
+	<string name="view_item">View Drink</string>
+	<string name="delete_item">Delete Drink</string>
 	
 	<string name="item_title">Drink Name</string>
 	<string name="item_ingredients">Ingredients</string>
