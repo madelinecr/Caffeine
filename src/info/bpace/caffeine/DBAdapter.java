@@ -1,6 +1,7 @@
 package info.bpace.caffeine;
 
 import android.content.Context;
+import android.util.Log;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 
