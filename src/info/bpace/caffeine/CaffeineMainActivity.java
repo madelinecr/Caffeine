@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuInflater;
 import android.view.View;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 
 /**
  * List activity showing every drink in the database
@@ -35,6 +37,7 @@ public class CaffeineMainActivity extends ListActivity
 		mDBAdapter = new DBAdapter(this);
 		mDBAdapter.open();
 		
+		registerForContextMenu( getListView() );
 		fillData();
 	}
 	
@@ -63,7 +66,7 @@ public class CaffeineMainActivity extends ListActivity
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.list_menu, menu);
+		inflater.inflate(R.menu.list_options, menu);
 		return true;
 	}
 	
@@ -80,6 +83,17 @@ public class CaffeineMainActivity extends ListActivity
 				startActivity(i);
 		}
 		return true;
+	}
+	
+	/**
+	 * Context menu callback
+	 */
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo)
+	{
+		super.onCreateContextMenu(menu, v, menuInfo);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.list_context, menu);
 	}
 	
 	/**
