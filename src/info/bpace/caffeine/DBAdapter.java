@@ -91,7 +91,7 @@ public class DBAdapter
 	public Cursor readAll()
 	{
 		return mDB.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TITLE,
-			KEY_INGREDIENTS, KEY_BODY}, null, null, null, null, null);
+			KEY_INGREDIENTS, KEY_BODY}, null, null, null, null, KEY_TITLE);
 	}
 	
 	/**
