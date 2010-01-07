@@ -40,6 +40,9 @@ public class EditItemActivity extends Activity implements OnClickListener
 		submit.setOnClickListener(this);
 	}
 	
+	/**
+	 * Submits form information and quits activity
+	 */
 	@Override
 	public void onClick(View view)
 	{
