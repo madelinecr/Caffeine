@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -96,6 +97,24 @@ public class CaffeineMainActivity extends ListActivity
 		super.onCreateContextMenu(menu, v, menuInfo);
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.list_context, menu);
+	}
+	
+	/**
+	 * Context menu selected callback
+	 */
+	@Override
+	public boolean onContextItemSelected(MenuItem item)
+	{
+		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+		switch(item.getItemId())
+		{
+			case R.id.edit_item:
+			
+			case R.id.delete_item:
+			
+			default:
+				return super.onContextItemSelected(item);
+		}
 	}
 	
 	/**
