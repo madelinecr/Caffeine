@@ -6,14 +6,20 @@ import android.database.Cursor;
 import android.content.Intent;
 
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuInflater;
+import android.view.View;
 
 public class CaffeineMainActivity extends ListActivity
 {
+	private static final int ACTIVITY_CREATE=0;
+	private static final int ACTIVITY_EDIT=1;
+	private static final int ACTIVITY_VIEW=2;
+	
 	DBAdapter mDBAdapter;
 	
 	/** Called when the activity is first created. */
@@ -60,6 +66,16 @@ public class CaffeineMainActivity extends ListActivity
 				startActivity(i);
 		}
 		return true;
+	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id)
+	{
+		super.onListItemClick(l, v, position, id);
+		Intent i = new Intent(this, ViewItemActivity.class);
+		
+		i.putExtra(DBAdapter.KEY_ROWID, id);
+		startActivityForResult(i, ACTIVITY_VIEW);
 	}
 	
 	@Override

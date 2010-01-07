@@ -15,5 +15,8 @@
 		
 		<activity android:name="EditItemActivity"
 		 android:label="@string/edit_item" />
+		
+		<activity android:name="ViewItemActivity"
+		 android:label="@string/view_item" />
 	</application>
 </manifest> 
