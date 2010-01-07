@@ -37,7 +37,6 @@ public class EditItemActivity extends Activity implements OnClickListener
 		
 		Button submit = (Button) findViewById(R.id.submit);
 		
-		
 		submit.setOnClickListener(this);
 	}
 	
