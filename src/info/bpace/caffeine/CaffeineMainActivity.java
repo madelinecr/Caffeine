@@ -14,6 +14,9 @@ import android.view.MenuItem;
 import android.view.MenuInflater;
 import android.view.View;
 
+/**
+ * List activity showing every drink in the database
+ */
 public class CaffeineMainActivity extends ListActivity
 {
 	private static final int ACTIVITY_CREATE=0;
@@ -22,7 +25,9 @@ public class CaffeineMainActivity extends ListActivity
 	
 	DBAdapter mDBAdapter;
 	
-	/** Called when the activity is first created. */
+	/**
+	 * Connects to the database and fills listView
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -33,6 +38,9 @@ public class CaffeineMainActivity extends ListActivity
 		fillData();
 	}
 	
+	/**
+	 * Queries for all rows in database and adds titles to listView
+	 */
 	private void fillData()
 	{
 		Cursor c = mDBAdapter.readAll();
@@ -48,6 +56,9 @@ public class CaffeineMainActivity extends ListActivity
 		getListView().setTextFilterEnabled(true);
 	}
 	
+	/**
+	 * Options menu callback
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
@@ -56,6 +67,9 @@ public class CaffeineMainActivity extends ListActivity
 		return true;
 	}
 	
+	/**
+	 * Options menu selected callback
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
@@ -68,6 +82,9 @@ public class CaffeineMainActivity extends ListActivity
 		return true;
 	}
 	
+	/**
+	 * List selection callback
+	 */
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id)
 	{
@@ -78,6 +95,9 @@ public class CaffeineMainActivity extends ListActivity
 		startActivityForResult(i, ACTIVITY_VIEW);
 	}
 	
+	/**
+	 * Called activity finished callback
+	 */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent intent)
 	{

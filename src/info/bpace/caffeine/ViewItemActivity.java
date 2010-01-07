@@ -8,6 +8,10 @@ import android.database.Cursor;
 import android.widget.TextView;
 import android.content.Intent;
 
+/**
+ * Activity for viewing specific items in the database
+ * and their details
+ */
 public class ViewItemActivity extends Activity
 {
 	DBAdapter mDBAdapter;

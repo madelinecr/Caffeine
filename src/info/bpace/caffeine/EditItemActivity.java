@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+/**
+ * Activity for adding and editting items
+ * in the database
+ */
 public class EditItemActivity extends Activity
 {
 	private EditText mTitleText;
@@ -15,6 +19,10 @@ public class EditItemActivity extends Activity
 	private EditText mBodyText;
 	private DBAdapter mDBAdapter;
 	
+	/**
+	 * Starts rendering main view, opens database connection
+	 * and sets mouse callback for submit button
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -41,6 +49,9 @@ public class EditItemActivity extends Activity
 		});
 	}
 	
+	/**
+	 * Write EditText fields out to database
+	 */
 	private void saveState()
 	{
 		String title = mTitleText.getText().toString();
