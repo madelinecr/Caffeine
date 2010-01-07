@@ -56,8 +56,8 @@ public class CaffeineMainActivity extends ListActivity
 		switch(item.getItemId())
 		{
 			case R.id.add_item:
-				Intent mIntent = new Intent("info.bpace.caffeine.action.NEW_ITEM");
-				startActivity(mIntent);
+				Intent i = new Intent(this, EditItemActivity.class);
+				startActivity(i);
 		}
 		return true;
 	}
