@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
  * Activity for adding and editting items
  * in the database
  */
-public class EditItemActivity extends Activity
+public class EditItemActivity extends Activity implements OnClickListener
 {
 	private EditText mTitleText;
 	private EditText mIngredientsText;
@@ -38,15 +38,14 @@ public class EditItemActivity extends Activity
 		Button submit = (Button) findViewById(R.id.submit);
 		
 		
-		submit.setOnClickListener(new OnClickListener()
-		{
-			public void onClick(View view)
-			{
-				setResult(RESULT_OK);
-				saveState();
-				finish();
-			}
-		});
+		submit.setOnClickListener(this);
+	}
+	
+	public void onClick(View view)
+	{
+		setResult(RESULT_OK);
+		saveState();
+		finish();
 	}
 	
 	/**
