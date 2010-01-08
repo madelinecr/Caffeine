@@ -1,0 +1,5 @@
+Americano	1 shot Espresso\n8 oz hot water	Pour hot water into espresso.
+Long Black	1 shot Espresso\n8 oz hot water	Pour shot of espresso into hot water.
+Espresso Macchiato	1 shot Espresso\nCold Milk	Froth and heat milk with steam wand.\n\nTraditional Preparation:\nDollop a small amount of milk and foam into drink.\n\nNewer Preparation:\nMix steamed milk with espresso in a 1:1 ratio.
+Espresso con Panna	1 or 2 shots Espresso\nWhipped Cream	Top espresso with whipped cream.
+Cappuccino	1 shot Espresso\n6 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Scoop foam onto drink.

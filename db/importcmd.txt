@@ -1,0 +1,6 @@
+create table drinksTmp(title text not null, ingredients text not null, body text not null);
+.import importfile.txt drinksTmp
+insert into drinks(title, ingredients, body) select * from drinksTmp;
+UPDATE drinks SET ingredients = Replace(ingredients, '\n', x'0A');
+UPDATE drinks SET body = Replace(body, '\n', x'0A');
+drop table drinksTmp;
