@@ -21,11 +21,11 @@ import java.io.FileOutputStream;
 public class DBAdapter
 {
 	// static block
-	private static final String DATABASE_NAME = "caffeine_db";
-	private static final String DATABASE_TABLE = "drinks";
-	private static final int DATABASE_VERSION = 1;
+	public static final String DATABASE_NAME = "caffeine_db";
+	public static final String DATABASE_TABLE = "drinks";
+	public static final int DATABASE_VERSION = 1;
 	
-	private static final String DATABASE_PATH = "/data/data/info.bpace.caffeine/databases/";
+	public static final String DATABASE_PATH = "/data/data/info.bpace.caffeine/databases/";
 	
 	public static final String KEY_ROWID = "_id";
 	public static final String KEY_TITLE = "title";
@@ -33,9 +33,9 @@ public class DBAdapter
 	public static final String KEY_BODY = "body";
 	public static final String[] COLUMNS = { KEY_ROWID, KEY_TITLE, KEY_INGREDIENTS, KEY_BODY };
 	
-	private static final String TAG = "CaffeineDBAdapter";
+	public static final String TAG = "CaffeineDBAdapter";
 
-	private static final String DATABASE_CREATE =
+	public static final String DATABASE_CREATE =
  		"create table drinks (_id integer primary key autoincrement, "
 		+ "title text not null, ingredients text not null, body text not null);";
 	
