@@ -94,7 +94,7 @@ public class CaffeineMainActivity extends ListActivity
 		switch(item.getItemId())
 		{
 			case R.id.edit_item:
-			
+				editItem(info.id);
 			case R.id.delete_item:
 			
 			default:
@@ -170,9 +170,11 @@ public class CaffeineMainActivity extends ListActivity
 	/**
 	 * Fires off an explicit intent to edit an entry
 	 */
-	private void editItem()
+	private void editItem(long id)
 	{
-		
+		Intent i = new Intent(this, EditItemActivity.class);
+		i.putExtra(DBAdapter.KEY_ROWID, id);
+		startActivityForResult(i, ACTIVITY_EDIT);
 	}
 	
 	/**

@@ -116,6 +116,19 @@ public class DBAdapter
 		return mCursor;
 	}
 	
+	/**
+	 * Updates an entry in the database
+	 */
+	public boolean updateEntry(long id, String title, String ingredients, String body)
+	{
+		ContentValues args = new ContentValues();
+		args.put(KEY_TITLE, title);
+		args.put(KEY_INGREDIENTS, ingredients);
+		args.put(KEY_BODY, body);
+		
+		return mDB.update(DATABASE_TABLE, args, KEY_ROWID + "=" + id, null) > 0;
+	}
+	
 // -----------------------------------------------------------------------------
 // Private helper class
 // -----------------------------------------------------------------------------
