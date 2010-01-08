@@ -95,8 +95,11 @@ public class CaffeineMainActivity extends ListActivity
 		{
 			case R.id.edit_item:
 				editItem(info.id);
+				return true;
 			case R.id.delete_item:
-			
+				deleteItem(info.id);
+				fillData();
+				return true;
 			default:
 				return super.onContextItemSelected(item);
 		}
@@ -180,8 +183,8 @@ public class CaffeineMainActivity extends ListActivity
 	/**
 	 * Fires off an explicit intent to delete an entry
 	 */
-	private void deleteItem()
+	private void deleteItem(long id)
 	{
-		
+		mDBAdapter.deleteEntry(id);
 	}
 }

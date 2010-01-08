@@ -129,6 +129,11 @@ public class DBAdapter
 		return mDB.update(DATABASE_TABLE, args, KEY_ROWID + "=" + id, null) > 0;
 	}
 	
+	public boolean deleteEntry(long id)
+	{
+		return mDB.delete(DATABASE_TABLE, KEY_ROWID + "=" + id, null) > 0;
+	}
+	
 // -----------------------------------------------------------------------------
 // Private helper class
 // -----------------------------------------------------------------------------
