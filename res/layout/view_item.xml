@@ -12,20 +12,26 @@
 	 android:layout_marginTop="10px"
 	 android:layout_marginBottom="15px"
 	 android:text="TextView"
-	 android:textSize="24sp"
+	 android:textSize="30sp"
 	 android:layout_gravity="center_horizontal" />
 
 	<TextView
 	 android:id="@+id/view_ingredients"
 	 android:layout_width="wrap_content"
 	 android:layout_height="wrap_content"
-	 android:text="TextView" />
+	 android:layout_marginLeft="5px"
+	 android:layout_marginRight="5px"
+	 android:text="TextView"
+	 android:textSize="15sp" />
 
 	<TextView
 	 android:id="@+id/view_body"
 	 android:layout_width="wrap_content"
 	 android:layout_height="wrap_content"
 	 android:layout_marginTop="10px"
-	 android:text="TextView" />
+	 android:layout_marginLeft="5px"
+	 android:layout_marginRight="5px"
+	 android:text="TextView" 
+	 android:textSize="15sp" />
 
 </LinearLayout>
