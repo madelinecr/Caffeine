@@ -8,6 +8,12 @@ import android.util.Log;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.SQLException;
+import android.database.sqlite.SQLiteException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.FileOutputStream;
 
 /**
  * Adapter class for interfacing with the database
@@ -18,6 +24,8 @@ public class DBAdapter
 	private static final String DATABASE_NAME = "caffeine_db";
 	private static final String DATABASE_TABLE = "drinks";
 	private static final int DATABASE_VERSION = 1;
+	
+	private static final String DATABASE_PATH = "/data/data/info.bpace.caffeine/databases/";
 	
 	public static final String KEY_ROWID = "_id";
 	public static final String KEY_TITLE = "title";
@@ -60,6 +68,20 @@ public class DBAdapter
 	{
 		mDBHelper = new DBHelper(mContext);
 		mDB = mDBHelper.getWritableDatabase();
+		try
+		{
+			if(mDBHelper.checkDatabase() == true)
+			{ // copy database if it doesn't exist
+				close();
+				mDBHelper.copyDatabase();
+				mDB = mDBHelper.getWritableDatabase();
+			}
+			
+		}
+		catch(IOException e)
+		{
+			Log.e(TAG, "Couldn't copy database");
+		}
 		return this;
 	}
 	
@@ -160,8 +182,54 @@ public class DBAdapter
 		{
 			Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
 				+ newVersion + ", which will destroy all old data");
-			db.execSQL("DROP TABLE IF EXISTS notes");
+			db.execSQL("DROP TABLE IF EXISTS drinks");
 			onCreate(db);
+		}
+		
+		/**
+		 * @return true if db exists, false if it doesn't
+		 */
+		public boolean checkDatabase()
+		{
+			SQLiteDatabase checkDB = null;
+			try
+			{
+				String path = DATABASE_PATH + DATABASE_NAME;
+				checkDB = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READONLY);
+			}
+			catch(SQLiteException e)
+			{
+				// database doesn't exist yet
+			}
+			
+			if(checkDB != null)
+			{
+				checkDB.close();
+			}
+			
+			return checkDB != null ? true : false;
+		}
+		
+		private void copyDatabase() throws IOException
+		{
+			InputStream input = mContext.getAssets().open(DATABASE_NAME);
+			String filename = DATABASE_PATH + DATABASE_NAME;
+			OutputStream output = new FileOutputStream(filename);
+			
+			Log.v(TAG, "Copying database to " + filename);
+			
+			byte[] buffer = new byte[1024];
+			int length;
+		
+			// transfer asset db to real db
+			while( (length = input.read(buffer) ) > 0)
+			{
+				Log.v(TAG, "Copying data");
+				output.write(buffer, 0, length);
+			}
+			output.flush();
+			output.close();
+			input.close();
 		}
 	}
 }
