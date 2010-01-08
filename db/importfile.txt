@@ -1,5 +1,13 @@
 Americano	1 shot Espresso\n8 oz hot water	Pour hot water into espresso.
-Long Black	1 shot Espresso\n8 oz hot water	Pour shot of espresso into hot water.
-Espresso Macchiato	1 shot Espresso\nCold Milk	Froth and heat milk with steam wand.\n\nTraditional Preparation:\nDollop a small amount of milk and foam into drink.\n\nNewer Preparation:\nMix steamed milk with espresso in a 1:1 ratio.
+Caffé Breve	1 shot Espresso\n10 oz Half-and-Half	Froth and heat half-and-half with steam wand. Pour half-and-half into espresso, holding back foam. Scoop foam onto drink.
+Caffé Latte	1 shot Espresso\n10 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Scoop foam onto drink. Drink can be dusted with ground chocolate, cinnamon or nutmeg.
+Caffé Mocha	1 shot Espresso\n10 oz Cold Milk\nCocoa Powder or Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix cocoa powder or chocolate syrup into drink. Scoop foam onto drink. Dust with cocoa powder.
+Café au lait	Dark Roast Coffee\nCold Milk	Brew strong, dark roast coffee using the drip method. Heat milk with a sauce pan until a skin forms. You may also heat the milk in the microwave. Mix coffee and milk to change strength as desired.
+Cappuccino	1 shot Espresso\n4 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Scoop foam onto drink.
 Espresso con Panna	1 or 2 shots Espresso\nWhipped Cream	Top espresso with whipped cream.
-Cappuccino	1 shot Espresso\n6 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Scoop foam onto drink.
+Espresso Macchiato	1 shot Espresso\nCold Milk	Froth and heat milk with steam wand.\n\nTraditional Preparation:\nDollop a small amount of milk and foam into drink.\n\nNewer Preparation:\nMix steamed milk with espresso in a 1:1 ratio.
+Flat White	1 shot Espresso\n4 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam.
+Long Black	1 shot Espresso\n8 oz hot water	Pour shot of espresso into hot water.
+Red Eye	Coffee\n1-3 shots Espresso	Brew 6-8 oz of drip coffee. Add espresso.
+Tuxedo Caffé Mocha	1 shot Espresso\n10 oz Cold Milk\nCocoa Powder or Chocolate Syrup\nWhite Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix equal amounts cocoa powder/chocolate syrup and white chocolate syrup into drink. Scoop foam onto drink.
+White Caffé Mocha	1 shot Espresso\n10 oz Cold Milk\nWhite Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix white chocolate syrup into drink. Scoop foam onto drink.
