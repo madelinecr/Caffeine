@@ -13,6 +13,9 @@
 			</intent-filter>
 		</activity>
 		
+		<activity android:name="ListViewActivity"
+		 android:label="@string/app_name" />
+		
 		<activity android:name="EditItemActivity"
 		 android:label="@string/edit_item" />
 		

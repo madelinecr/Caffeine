@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Caffeine</string>
+	<string name="subtitle">Pick a Drink Category</string>
 	<string name="add_item">Add Drink</string>
 	<string name="edit_item">Edit Drink</string>
 	<string name="view_item">View Drink</string>
 	<string name="delete_item">Delete Drink</string>
+	
+	<string name="espresso">Espresso-Based</string>
+	<string name="coffee">Coffee-Based</string>
+	<string name="hot">Hot Drinks</string>
+	<string name="cold">Cold Drinks</string>
+	<string name="all">All</string>
 	
 	<string name="item_title">Drink Name</string>
 	<string name="item_ingredients">Ingredients</string>
