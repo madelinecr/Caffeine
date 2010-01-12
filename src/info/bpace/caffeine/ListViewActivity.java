@@ -17,11 +17,18 @@ import android.view.View;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 
+import android.util.Log;
+
 /**
  * List activity showing every drink in the database
  */
 public class ListViewActivity extends ListActivity
 {
+	public static final String LIST_ESPRESSO="info.bpace.caffeine.ACTION_LIST_ESPRESSO";
+	public static final String LIST_COFFEE="info.bpace.caffeine.ACTION_LIST_COFFEE";
+	public static final String LIST_HOT="info.bpace.caffeine.ACTION_LIST_HOT";
+	public static final String LIST_COLD="info.bpace.caffeine.ACTION_LIST_COLD";
+	
 	private static final int ACTIVITY_CREATE=0;
 	private static final int ACTIVITY_EDIT=1;
 	private static final int ACTIVITY_VIEW=2;
@@ -43,7 +50,7 @@ public class ListViewActivity extends ListActivity
 		mDBAdapter.open();
 		
 		registerForContextMenu( getListView() );
-		fillData();
+		fillData(getIntent().getAction());
 	}
 	
 	/**
@@ -98,7 +105,7 @@ public class ListViewActivity extends ListActivity
 				return true;
 			case R.id.delete_item:
 				deleteItem(info.id);
-				fillData();
+				fillData(getIntent().getAction());
 				return true;
 			default:
 				return super.onContextItemSelected(item);
@@ -126,7 +133,7 @@ public class ListViewActivity extends ListActivity
 	protected void onActivityResult(int requestCode, int resultCode, Intent intent)
 	{
 		super.onActivityResult(requestCode, resultCode, intent);
-		fillData();
+		fillData(getIntent().getAction());
 	}
 	
 // -----------------------------------------------------------------------------
@@ -136,9 +143,30 @@ public class ListViewActivity extends ListActivity
 	/**
 	 * Queries for all rows in database and adds titles to listView
 	 */
-	private void fillData()
+	private void fillData(String action)
 	{
-		Cursor c = mDBAdapter.readAll();
+		Cursor c;
+
+		if(action != null && action.equals(LIST_ESPRESSO))
+		{
+			c = mDBAdapter.readEspresso();
+		}
+		else if(action != null && action.equals(LIST_COFFEE))
+		{
+			c = mDBAdapter.readCoffee();
+		}
+		else if(action != null && action.equals(LIST_HOT))
+		{
+			c = mDBAdapter.readHot();
+		}
+		else if(action != null && action.equals(LIST_COLD))
+		{
+			c = mDBAdapter.readCold();
+		}
+		else
+		{
+			c = mDBAdapter.readAll();
+		}
 		startManagingCursor(c);
 		
 		int layout = android.R.layout.simple_list_item_1;

@@ -31,7 +31,10 @@ public class DBAdapter
 	public static final String KEY_TITLE = "title";
 	public static final String KEY_INGREDIENTS = "ingredients";
 	public static final String KEY_BODY = "body";
-	public static final String[] COLUMNS = { KEY_ROWID, KEY_TITLE, KEY_INGREDIENTS, KEY_BODY };
+	public static final String KEY_ESPRESSO = "has_espresso";
+	public static final String KEY_COFFEE = "has_coffee";
+	public static final String KEY_COLD = "is_cold";
+	public static final String[] COLUMNS = { KEY_ROWID, KEY_TITLE, KEY_INGREDIENTS, KEY_BODY, KEY_ESPRESSO, KEY_COFFEE, KEY_COLD };
 	
 	public static final String TAG = "CaffeineDBAdapter";
 
@@ -76,7 +79,6 @@ public class DBAdapter
 				mDBHelper.copyDatabase();
 				mDB = mDBHelper.getWritableDatabase();
 			}
-			
 		}
 		catch(IOException e)
 		{
@@ -120,6 +122,49 @@ public class DBAdapter
 			KEY_INGREDIENTS, KEY_BODY}, null, null, null, null, KEY_TITLE);
 	}
 	
+	/**
+	 * Returns a cursor containing every drink with espresso in it
+	 * @return Cursor every drink with espresso
+	 */
+	public Cursor readEspresso()
+	{
+		return mDB.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TITLE, 
+			KEY_INGREDIENTS, KEY_BODY}, KEY_ESPRESSO + "=" + "1", null, null, null, KEY_TITLE);
+	}
+
+	/**
+	 * Returns a cursor containing every drink with coffee in it
+	 * @return Cursor every drink with coffee
+	 */
+	public Cursor readCoffee()
+	{
+		Cursor c = mDB.query(DATABASE_TABLE, COLUMNS, KEY_COFFEE + "=" + "1", null, null, null, KEY_TITLE);
+		Log.d(TAG, "Query returned: " + c.getCount());
+		return c;
+	}
+	
+	/**
+	 * Returns a cursor containing every hot drink
+	 * @return Cursor every hot drink
+	 */
+	public Cursor readHot()
+	{
+		Cursor c = mDB.query(DATABASE_TABLE, COLUMNS, KEY_COLD + "=" + "0", null, null, null, KEY_TITLE);
+		Log.d(TAG, "Query returned: " + c.getCount());
+		return c;
+	}
+	
+	/**
+	 * Returns a cursor containing every cold drink
+	 * @return Cursor every cold drink
+	 */
+	public Cursor readCold()
+	{
+		Cursor c = mDB.query(DATABASE_TABLE, COLUMNS, KEY_COLD + "=" + "1", null, null, null, KEY_TITLE);
+		Log.d(TAG, "Query returned: " + c.getCount());
+		return c;
+	}
+
 	/**
 	 * Returns a cursor containing the specific row requested
 	 * @param rowId the row queried

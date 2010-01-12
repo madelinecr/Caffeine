@@ -1,10 +1,10 @@
-create table drinks (_id integer primary key autoincrement, title text not null, ingredients text not null, body text not null);
+create table drinks (_id integer primary key autoincrement, title text not null, ingredients text not null, body text not null, has_espresso integer not null, has_coffee integer not null, is_cold integer not null);
 create table 'android_metadata' ('locale' TEXT DEFAULT 'en_US');
 insert into 'android_metadata' values ('en_US');
-create table drinksTmp(title text not null, ingredients text not null, body text not null);
+create table drinksTmp(title text not null, ingredients text not null, body text not null, has_espresso integer not null, has_coffee integer not null, is_cold integer not null);
 .mode tabs
 .import importfile.txt drinksTmp
-insert into drinks(title, ingredients, body) select * from drinksTmp;
+insert into drinks(title, ingredients, body, has_espresso, has_coffee, is_cold) select * from drinksTmp;
 UPDATE drinks SET ingredients = Replace(ingredients, '\n', x'0A');
 UPDATE drinks SET body = Replace(body, '\n', x'0A');
 PRAGMA user_version = 1;

@@ -1,14 +1,14 @@
-Americano	1 shot Espresso\n8 oz hot water	Pour hot water into espresso.
-Breve	1 shot Espresso\n10 oz Half-and-Half	Froth and heat half-and-half with steam wand. Pour half-and-half into espresso, holding back foam. Scoop foam onto drink.
-Café au lait	Dark Roast Coffee\nCold Milk	Brew strong, dark roast coffee using the drip method. Heat milk with a sauce pan until a skin forms. You may also heat the milk in the microwave. Mix coffee and milk to change strength as desired.
-Cappuccino	1 shot Espresso\n4 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Scoop foam onto drink.
-Espresso con Panna	1 or 2 shots Espresso\nWhipped Cream	Top espresso with whipped cream.
-Espresso Macchiato	1 shot Espresso\nCold Milk	Froth and heat milk with steam wand.\n\nTraditional Preparation:\nDollop a small amount of milk and foam into drink.\n\nNewer Preparation:\nMix steamed milk with espresso in a 1:1 ratio.
-Flat White	1 shot Espresso\n4 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam.
-Latte	1 shot Espresso\n10 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Scoop foam onto drink. Drink can be dusted with ground chocolate, cinnamon or nutmeg.
-Long Black	1 shot Espresso\n8 oz hot water	Pour shot of espresso into hot water.
-Mocha	1 shot Espresso\n10 oz Cold Milk\nCocoa Powder or Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix cocoa powder or chocolate syrup into drink. Scoop foam onto drink. Dust with cocoa powder.
-Red Eye	Coffee\n1-3 shots Espresso	Brew 6-8 oz of drip coffee. Add espresso.
-Tuxedo Mocha	1 shot Espresso\n10 oz Cold Milk\nCocoa Powder or Chocolate Syrup\nWhite Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix equal amounts cocoa powder/chocolate syrup and white chocolate syrup into drink. Scoop foam onto drink.
-White Mocha	1 shot Espresso\n10 oz Cold Milk\nWhite Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix white chocolate syrup into drink. Scoop foam onto drink.
-Arabian Coffee	1 pint Water\n3 tbsp Ground Coffee\n3 tbsp Sugar\n1/4 tsp Cinnamon\n1/4tsp Cardamom\n1 tsp Vanilla	Heat all ingredients in a saucepan until foam starts to form on top. Serve immediately. To keep it traditional, don't pour coffee through a filter.
+Americano	1 shot Espresso\n8 oz hot water	Pour hot water into espresso.	1	0	0
+Breve	1 shot Espresso\n10 oz Half-and-Half	Froth and heat half-and-half with steam wand. Pour half-and-half into espresso, holding back foam. Scoop foam onto drink.	1	0	0
+Café au lait	Dark Roast Coffee\nCold Milk	Brew strong, dark roast coffee using the drip method. Heat milk with a sauce pan until a skin forms. You may also heat the milk in the microwave. Mix coffee and milk to change strength as desired.	0	1	0
+Cappuccino	1 shot Espresso\n4 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Scoop foam onto drink.	1	0	0
+Espresso con Panna	1 or 2 shots Espresso\nWhipped Cream	Top espresso with whipped cream.	1	0	0
+Espresso Macchiato	1 shot Espresso\nCold Milk	Froth and heat milk with steam wand.\n\nTraditional	1	0	0 Preparation:\nDollop a small amount of milk and foam into drink.\n\nNewer Preparation:\nMix steamed milk with espresso in a 1:1 ratio.
+Flat White	1 shot Espresso\n4 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam.	1	0	0
+Latte	1 shot Espresso\n10 oz Cold Milk	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Scoop foam onto drink. Drink can be dusted with ground chocolate, cinnamon or nutmeg.	1	0	0
+Long Black	1 shot Espresso\n8 oz hot water	Pour shot of espresso into hot water.	1	0	0
+Mocha	1 shot Espresso\n10 oz Cold Milk\nCocoa Powder or Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix cocoa powder or chocolate syrup into drink. Scoop foam onto drink. Dust with cocoa powder.	1	0	0
+Red Eye	Coffee\n1-3 shots Espresso	Brew 6-8 oz of drip coffee. Add espresso.	1	1	0
+Tuxedo Mocha	1 shot Espresso\n10 oz Cold Milk\nCocoa Powder or Chocolate Syrup\nWhite Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix equal amounts cocoa powder/chocolate syrup and white chocolate syrup into drink. Scoop foam onto drink.	1	0	0
+White Mocha	1 shot Espresso\n10 oz Cold Milk\nWhite Chocolate Syrup	Froth and heat milk with steam wand. Pour milk into espresso, holding back foam. Mix white chocolate syrup into drink. Scoop foam onto drink.	1	0	0
+Arabian Coffee	1 pint Water\n3 tbsp Ground Coffee\n3 tbsp Sugar\n1/4 tsp Cinnamon\n1/4tsp Cardamom\n1 tsp Vanilla	Heat all ingredients in a saucepan until foam starts to form on top. Serve immediately. To keep it traditional, don't pour coffee through a filter.	0	1	0
