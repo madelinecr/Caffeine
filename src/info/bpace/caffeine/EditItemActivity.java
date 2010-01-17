@@ -48,6 +48,7 @@ public class EditItemActivity extends Activity implements OnClickListener
 		mId = savedInstanceState != null ? savedInstanceState.getLong(DBAdapter.KEY_ROWID)
 		                                 : null;
 		
+		boolean resuming = false;
 		if(mId == null)
 		{
 			// activity isn't resuming, try to pull id from intent
@@ -55,8 +56,12 @@ public class EditItemActivity extends Activity implements OnClickListener
 			mId = extras != null ? extras.getLong(DBAdapter.KEY_ROWID)
 			                     : null;
 		}
+		else
+		{
+			resuming = true;
+		}
 		
-		populateFields();
+		populateFields(resuming);
 		
 		submit.setOnClickListener(this);
 	}
@@ -78,9 +83,9 @@ public class EditItemActivity extends Activity implements OnClickListener
 
 	/**
 	 */
-	private void populateFields()
+	private void populateFields(boolean isResuming)
 	{
-		if(mId != null)
+		if(mId != null && isResuming == false)
 		{
 			Cursor c = mDBAdapter.readEntry(mId);
 			startManagingCursor(c);
