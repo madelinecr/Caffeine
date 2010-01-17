@@ -42,9 +42,24 @@
 	 android:gravity="top"
 	 android:layout_weight="0.5" />
 	
-	<Button
-	 android:id="@+id/submit"
-	 android:layout_width="wrap_content"
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	 android:layout_width="fill_parent"
 	 android:layout_height="wrap_content"
-	 android:text="@string/submit" />
+	 android:stretchColumns="1">
+	
+		<TableRow>
+			<Button
+			 android:id="@+id/categories"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="@string/categories" />
+			<Button
+			 android:id="@+id/submit"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="@string/submit"
+			 android:layout_gravity="right" />
+		</TableRow>
+		
+	</TableLayout>
 </LinearLayout>
