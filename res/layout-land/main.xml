@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+ android:padding="3dip"
+ xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<TextView
+	 android:id="@+id/title"
+	 android:layout_width="wrap_content"
+	 android:layout_height="wrap_content"
+	 android:text="@string/app_name"
+	 android:textSize="30sp"
+	 android:layout_centerHorizontal="true" />
+
+	<TextView
+	 android:id="@+id/subtitle"
+	 android:layout_width="wrap_content"
+	 android:layout_height="wrap_content"
+	 android:text="@string/subtitle"
+	 android:textSize="20sp"
+	 android:layout_below="@id/title"
+	 android:layout_centerHorizontal="true" />
+
+	<RelativeLayout
+	 android:layout_width="wrap_content"
+	 android:layout_height="wrap_content"
+	 android:padding="7dip"
+	 android:layout_centerInParent="true"
+	 android:layout_below="@id/subtitle"
+	 xmlns:android="http://schemas.android.com/apk/res/android">
+	
+		<Button
+		 android:id="@+id/espresso"
+		 android:layout_width="200dip"
+		 android:layout_height="wrap_content"
+		 android:layout_marginTop="10dip"
+		 android:text="@string/espresso" />
+
+		<Button
+		 android:id="@+id/hot"
+		 android:layout_width="200dip"
+		 android:layout_height="wrap_content"
+		 android:layout_marginTop="10dip"
+		 android:text="@string/hot"
+		 android:layout_below="@id/espresso" />
+		
+		<Button
+		 android:id="@+id/all"
+		 android:layout_width="200dip"
+		 android:layout_height="wrap_content"
+		 android:layout_marginTop="10dip"
+		 android:text="@string/all"
+		 android:layout_below="@id/hot" />
+		
+		<Button
+		 android:id="@+id/coffee"
+		 android:layout_width="200dip"
+		 android:layout_height="wrap_content"
+		 android:layout_marginLeft="15dip"
+		 android:text="@string/coffee"
+		 android:layout_toRightOf="@id/espresso"
+		 android:layout_alignTop="@id/espresso" />
+
+		<Button
+		 android:id="@+id/cold"
+		 android:layout_width="200dip"
+		 android:layout_height="wrap_content"
+		 android:text="@string/cold"
+		 android:layout_below="@id/coffee"
+		 android:layout_alignLeft="@id/coffee"
+		 android:layout_alignTop="@id/hot" />
+
+	</RelativeLayout>
+</RelativeLayout>
